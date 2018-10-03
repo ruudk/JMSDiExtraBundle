@@ -34,7 +34,7 @@ class IntegrationPass implements CompilerPassInterface
     public function process(ContainerBuilder $container)
     {
         // replace Symfony2's default controller resolver
-        $container->setAlias('controller_resolver', new Alias('jms_di_extra.controller_resolver', false));
+        // $container->setAlias('controller_resolver', new Alias('jms_di_extra.controller_resolver', false));
 
         if (true === $container->getParameter('jms_di_extra.doctrine_integration')) {
             $this->integrateWithDoctrine($container);
